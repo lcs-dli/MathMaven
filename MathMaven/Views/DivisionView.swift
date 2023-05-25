@@ -12,7 +12,7 @@ struct DivisionView: View {
     
     //Value to multiply
     @State var secondValue = Int.random(in: 1...10)
-    @State var correctAnswer = Int.random(in: 1...10)
+    @State var correctResponse = Int.random(in: 1...10)
     
     //Hold input
     @State var input = ""
@@ -27,7 +27,7 @@ struct DivisionView: View {
     
     //Correct answer
     var firstValue: Int{
-        return secondValue * correctAnswer
+        return secondValue * correctResponse
     }
     var body: some View {
         
@@ -60,8 +60,52 @@ struct DivisionView: View {
                     .multilineTextAlignment(.trailing)
             }
             .padding(.horizontal)
+            
+            //3. Check answer
+            //   Only show button when answer has not already been checked
+            if answerChecked == false {
+                
+                CheckAnswerButtonView(input: input,
+                                      correctResponse: correctResponse,
+                                      answerChecked: $answerChecked,
+                                      answerCorrect: $answerCorrect)
+
+            } else {
+                
+                // 4. Generate new question
+                // Only show this once an answer has been provided
+                Button(action: {
+                    generateNewQuestion()
+                }, label: {
+                    Text("New question")
+                        .font(.largeTitle)
+                })
+                .padding()
+                .buttonStyle(.bordered)
+                
+            }
+            
+            // Push interface up to top of screen
+            Spacer()
+
         }
         .font(Font.custom("SF Pro", size: 64))
+    }
+    
+    //MARK: Function
+    func generateNewQuestion() {
+        
+        // Generate a new question
+        correctResponse = Int.random(in: 1...30)
+        secondValue = Int.random(in: 1...30)
+
+        // Reset properties that track what's happening with the current question
+        answerChecked = false
+        answerCorrect = false
+        
+        // Reset the input field
+        input = ""
+
     }
 }
 
