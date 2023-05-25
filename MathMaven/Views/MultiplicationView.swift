@@ -26,7 +26,7 @@ struct MultiplicationView: View {
     //MARK: Computing property
     
     //Correct answer
-    var correctAnswer: Int{
+    var correctResponse: Int{
         return firstValue * secondValue
     }
     
@@ -63,9 +63,51 @@ struct MultiplicationView: View {
             .padding(.horizontal)
             
             //3. Check Answer
+            //    Only show button when answer has not already been checked
+            if answerChecked == false {
+                
+                CheckAnswerButtonView(input: input,
+                                      correctResponse: correctResponse,
+                                      answerChecked: $answerChecked,
+                                      answerCorrect: $answerCorrect)
+
+            } else {
+                
+                // 4. Generate new question
+                // Only show this once an answer has been provided
+                Button(action: {
+                    generateNewQuestion()
+                }, label: {
+                    Text("New question")
+                        .font(.largeTitle)
+                })
+                .padding()
+                .buttonStyle(.bordered)
+                
+            }
+            
+            // Push interface up to top of screen
+            Spacer()
+
+        }.font(Font.custom("SF Pro", size: 64))
             
         }
-        .font(Font.custom("SF Pro", size: 64))
+        
+    
+    //MARK: Function
+    func generateNewQuestion() {
+        
+        // Generate a new question
+        firstValue = Int.random(in: 1...30)
+        secondValue = Int.random(in: 1...30)
+
+        // Reset properties that track what's happening with the current question
+        answerChecked = false
+        answerCorrect = false
+        
+        // Reset the input field
+        input = ""
+
     }
 }
 
