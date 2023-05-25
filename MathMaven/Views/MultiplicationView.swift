@@ -36,7 +36,33 @@ struct MultiplicationView: View {
             // 1. Present question
             PresentQuestionView(sign: Operation.multiplication.rawValue,firstValue: firstValue, secondValue: secondValue)
             
+            // 2. Accept answer
+            HStack {
+
+                ZStack {
+                    
+                    // Only show this when the answer was found to be correct
+                    if answerCorrect == true {
+                        Image(systemName: "checkmark.circle")
+                            .foregroundColor(.green)
+                    }
+                    
+                    // Show this when the answer was checked and found to be false
+                    if answerChecked == true && answerCorrect == false {
+                        Image(systemName: "x.square")
+                            .foregroundColor(.red)
+                    }
+                }
+                
+                Spacer()
+                
+                TextField("",
+                          text: $input)
+                    .multilineTextAlignment(.trailing)
+            }
+            .padding(.horizontal)
             
+            //3. Check Answer
             
         }
         .font(Font.custom("SF Pro", size: 64))
