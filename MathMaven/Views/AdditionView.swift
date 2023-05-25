@@ -11,6 +11,9 @@ struct AdditionView: View {
     
     // MARK: Stored properties
     
+    //type of view
+    let typeView = Operation.addition
+    
     // The numbers to be added
     @State var firstValue = Int.random(in: 1...72)
     @State var secondValue = Int.random(in: 1...72)
@@ -37,21 +40,7 @@ struct AdditionView: View {
         VStack(spacing: 0) {
             
             // 1. Present question
-            Group {
-                HStack {
-                    Text(Operation.addition.rawValue)
-                    
-                    Spacer()
-                    
-                    VStack(alignment: .trailing) {
-                        Text("\(firstValue)")
-                        Text("\(secondValue)")
-                    }
-                }
-                
-                Divider()
-            }
-            .padding(.horizontal)
+            PresentQuestionView(sign: typeView.rawValue,firstValue: firstValue, secondValue: secondValue)
 
             // 2. Accept answer
             HStack {

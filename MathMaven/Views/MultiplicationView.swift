@@ -31,10 +31,13 @@ struct MultiplicationView: View {
     }
     
     var body: some View {
-        VStack {
-            Group{
-                
-            }
+        VStack (spacing: 0){
+
+            // 1. Present question
+            PresentQuestionView(sign: Operation.multiplication.rawValue,firstValue: firstValue, secondValue: secondValue)
+            
+            
+            
         }
         .font(Font.custom("SF Pro", size: 64))
     }

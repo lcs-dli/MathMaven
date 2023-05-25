@@ -36,21 +36,7 @@ struct SubtractionView: View {
         VStack(spacing: 0) {
             
             // 1. Present question
-            Group {
-                HStack {
-                    Text(Operation.subtraction.rawValue)
-                    
-                    Spacer()
-                    
-                    VStack(alignment: .trailing) {
-                        Text("\(firstValue)")
-                        Text("\(secondValue)")
-                    }
-                }
-                
-                Divider()
-            }
-            .padding(.horizontal)
+            PresentQuestionView(sign: Operation.subtraction.rawValue,firstValue: firstValue, secondValue: secondValue)
 
             // 2. Accept answer
             HStack {
