@@ -32,8 +32,9 @@ struct MultiplicationView: View {
     
     var body: some View {
         VStack {
-            Text("Multiplication")
-            Text(Operation.multiplication.rawValue)
+            Group{
+                
+            }
         }
         .font(Font.custom("SF Pro", size: 64))
     }
