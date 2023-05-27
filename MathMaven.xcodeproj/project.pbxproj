@@ -10,6 +10,7 @@
 		49C93FFF2A1FE2C9001BABA8 /* CalculationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C93FFE2A1FE2C9001BABA8 /* CalculationView.swift */; };
 		49C940012A1FF384001BABA8 /* PresentQuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C940002A1FF384001BABA8 /* PresentQuestionView.swift */; };
 		49D163202A21804F005E7758 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 49D1631F2A21804F005E7758 /* Lottie */; };
+		49D163222A218339005E7758 /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D163212A218339005E7758 /* LottieView.swift */; };
 		814858F92A1E28DE00A7315E /* MathMavenApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814858F82A1E28DE00A7315E /* MathMavenApp.swift */; };
 		814858FD2A1E28DF00A7315E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 814858FC2A1E28DF00A7315E /* Assets.xcassets */; };
 		814859002A1E28DF00A7315E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 814858FF2A1E28DF00A7315E /* Preview Assets.xcassets */; };
@@ -24,6 +25,7 @@
 /* Begin PBXFileReference section */
 		49C93FFE2A1FE2C9001BABA8 /* CalculationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculationView.swift; sourceTree = "<group>"; };
 		49C940002A1FF384001BABA8 /* PresentQuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentQuestionView.swift; sourceTree = "<group>"; };
+		49D163212A218339005E7758 /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
 		814858F52A1E28DE00A7315E /* MathMaven.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MathMaven.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		814858F82A1E28DE00A7315E /* MathMavenApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathMavenApp.swift; sourceTree = "<group>"; };
 		814858FC2A1E28DF00A7315E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				814859152A1E360D00A7315E /* CheckAnswerButtonView.swift */,
+				49D163212A218339005E7758 /* LottieView.swift */,
 				49C940002A1FF384001BABA8 /* PresentQuestionView.swift */,
 				49C93FFE2A1FE2C9001BABA8 /* CalculationView.swift */,
 			);
@@ -197,6 +200,7 @@
 				8148590A2A1E294A00A7315E /* SubtractionView.swift in Sources */,
 				49C940012A1FF384001BABA8 /* PresentQuestionView.swift in Sources */,
 				8148590F2A1E298300A7315E /* DivisionView.swift in Sources */,
+				49D163222A218339005E7758 /* LottieView.swift in Sources */,
 				814859122A1E2A5900A7315E /* Operation.swift in Sources */,
 				814859162A1E360D00A7315E /* CheckAnswerButtonView.swift in Sources */,
 			);
