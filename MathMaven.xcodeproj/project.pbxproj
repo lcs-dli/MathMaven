@@ -11,6 +11,7 @@
 		49C940012A1FF384001BABA8 /* PresentQuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C940002A1FF384001BABA8 /* PresentQuestionView.swift */; };
 		49D163202A21804F005E7758 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 49D1631F2A21804F005E7758 /* Lottie */; };
 		49D163222A218339005E7758 /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D163212A218339005E7758 /* LottieView.swift */; };
+		49D163272A21859D005E7758 /* 32585-fireworks-display.json in Resources */ = {isa = PBXBuildFile; fileRef = 49D163262A21859D005E7758 /* 32585-fireworks-display.json */; };
 		814858F92A1E28DE00A7315E /* MathMavenApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814858F82A1E28DE00A7315E /* MathMavenApp.swift */; };
 		814858FD2A1E28DF00A7315E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 814858FC2A1E28DF00A7315E /* Assets.xcassets */; };
 		814859002A1E28DF00A7315E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 814858FF2A1E28DF00A7315E /* Preview Assets.xcassets */; };
@@ -26,6 +27,7 @@
 		49C93FFE2A1FE2C9001BABA8 /* CalculationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculationView.swift; sourceTree = "<group>"; };
 		49C940002A1FF384001BABA8 /* PresentQuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentQuestionView.swift; sourceTree = "<group>"; };
 		49D163212A218339005E7758 /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
+		49D163262A21859D005E7758 /* 32585-fireworks-display.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "32585-fireworks-display.json"; path = "../../../../../../../../Downloads/32585-fireworks-display.json"; sourceTree = "<group>"; };
 		814858F52A1E28DE00A7315E /* MathMaven.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MathMaven.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		814858F82A1E28DE00A7315E /* MathMavenApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathMavenApp.swift; sourceTree = "<group>"; };
 		814858FC2A1E28DF00A7315E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -50,6 +52,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		49D163232A21842D005E7758 /* Animations */ = {
+			isa = PBXGroup;
+			children = (
+				49D163262A21859D005E7758 /* 32585-fireworks-display.json */,
+			);
+			path = Animations;
+			sourceTree = "<group>";
+		};
 		814858EC2A1E28DE00A7315E = {
 			isa = PBXGroup;
 			children = (
@@ -69,6 +79,7 @@
 		814858F72A1E28DE00A7315E /* MathMaven */ = {
 			isa = PBXGroup;
 			children = (
+				49D163232A21842D005E7758 /* Animations */,
 				814858F82A1E28DE00A7315E /* MathMavenApp.swift */,
 				814859102A1E2A4500A7315E /* Model */,
 				814859062A1E292A00A7315E /* Views */,
@@ -183,6 +194,7 @@
 			files = (
 				814859002A1E28DF00A7315E /* Preview Assets.xcassets in Resources */,
 				814858FD2A1E28DF00A7315E /* Assets.xcassets in Resources */,
+				49D163272A21859D005E7758 /* 32585-fireworks-display.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
