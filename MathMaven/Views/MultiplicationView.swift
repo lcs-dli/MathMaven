@@ -31,65 +31,73 @@ struct MultiplicationView: View {
     }
     
     var body: some View {
-        VStack (spacing: 0){
+        ZStack{
+            //animation
+            if answerCorrect == true {
+                 LottieView(animationNamed: "32585-fireworks-display")
+            }
+            VStack (spacing: 0){
 
-            // 1. Present question
-            PresentQuestionView(sign: Operation.multiplication.rawValue,firstValue: firstValue, secondValue: secondValue)
-            
-            // 2. Accept answer
-            HStack {
+                // 1. Present question
+                PresentQuestionView(sign: Operation.multiplication.rawValue,firstValue: firstValue, secondValue: secondValue)
+                
+                // 2. Accept answer
+                HStack {
 
-                ZStack {
-                    
-                    // Only show this when the answer was found to be correct
-                    if answerCorrect == true {
-                        Image(systemName: "checkmark.circle")
-                            .foregroundColor(.green)
+                    ZStack {
+                        
+                        // Only show this when the answer was found to be correct
+                        if answerCorrect == true {
+                            Image(systemName: "checkmark.circle")
+                                .foregroundColor(.green)
+                        }
+                        
+                        // Show this when the answer was checked and found to be false
+                        if answerChecked == true && answerCorrect == false {
+                            Image(systemName: "x.square")
+                                .foregroundColor(.red)
+                        }
                     }
                     
-                    // Show this when the answer was checked and found to be false
-                    if answerChecked == true && answerCorrect == false {
-                        Image(systemName: "x.square")
-                            .foregroundColor(.red)
-                    }
+                    Spacer()
+                    
+                    TextField("",
+                              text: $input)
+                        .multilineTextAlignment(.trailing)
+                }
+                .padding(.horizontal)
+                
+                //3. Check Answer
+                //    Only show button when answer has not already been checked
+                if answerChecked == false {
+                    
+                    CheckAnswerButtonView(input: input,
+                                          correctResponse: correctResponse,
+                                          answerChecked: $answerChecked,
+                                          answerCorrect: $answerCorrect)
+
+                } else {
+                    
+                    // 4. Generate new question
+                    // Only show this once an answer has been provided
+                    Button(action: {
+                        generateNewQuestion()
+                    }, label: {
+                        Text("New question")
+                            .font(.largeTitle)
+                    })
+                    .padding()
+                    .buttonStyle(.bordered)
+                    
                 }
                 
+                // Push interface up to top of screen
                 Spacer()
-                
-                TextField("",
-                          text: $input)
-                    .multilineTextAlignment(.trailing)
-            }
-            .padding(.horizontal)
-            
-            //3. Check Answer
-            //    Only show button when answer has not already been checked
-            if answerChecked == false {
-                
-                CheckAnswerButtonView(input: input,
-                                      correctResponse: correctResponse,
-                                      answerChecked: $answerChecked,
-                                      answerCorrect: $answerCorrect)
 
-            } else {
-                
-                // 4. Generate new question
-                // Only show this once an answer has been provided
-                Button(action: {
-                    generateNewQuestion()
-                }, label: {
-                    Text("New question")
-                        .font(.largeTitle)
-                })
-                .padding()
-                .buttonStyle(.bordered)
-                
             }
-            
-            // Push interface up to top of screen
-            Spacer()
-
-        }.font(Font.custom("SF Pro", size: 64))
+            .font(Font.custom("SF Pro", size: 64))
+        }
+        
             
         }
         
