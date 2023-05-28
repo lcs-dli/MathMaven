@@ -38,9 +38,16 @@ struct AdditionView: View {
     var body: some View {
         ZStack{
             //animation
+            //Correct animation
             if answerCorrect == true {
                  LottieView(animationNamed: "32585-fireworks-display")
             }
+            
+            //Wrong animation
+            if answerChecked == true && answerCorrect == false{
+                LottieView(animationNamed: "61218-thunder-lightening-element-effect-animation")
+            }
+            
             VStack(spacing: 0) {
                 
                 // 1. Present question

@@ -32,8 +32,14 @@ struct DivisionView: View {
     var body: some View {
         ZStack{
             //animation
+            //Correct animation
             if answerCorrect == true {
                  LottieView(animationNamed: "32585-fireworks-display")
+            }
+            
+            //Wrong animation
+            if answerChecked == true && answerCorrect == false{
+                LottieView(animationNamed: "61218-thunder-lightening-element-effect-animation")
             }
             
             VStack(spacing: 0){
@@ -117,8 +123,8 @@ struct DivisionView: View {
     func generateNewQuestion() {
         
         // Generate a new question
-        correctResponse = Int.random(in: 1...30)
-        secondValue = Int.random(in: 1...30)
+        correctResponse = Int.random(in: 1...10)
+        secondValue = Int.random(in: 1...10)
 
         // Reset properties that track what's happening with the current question
         answerChecked = false
